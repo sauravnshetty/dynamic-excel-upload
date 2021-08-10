@@ -139,6 +139,18 @@ input[type='search'] {
 .delete-btn {
 }
 
+
+.messageWhenEmpty {
+  color: #656464;
+  opacity: 0.7;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%);
+  margin-bottom: 10px;
+}
+
 /**************** PAGINATION CSS *****************/
 .page-nav {
   display: flex;

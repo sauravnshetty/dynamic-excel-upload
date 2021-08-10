@@ -1,7 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .NavigationBar{
     display: block;
+    background-color: #222831 !important;
     position: sticky;
     flex-grow: 1;
+    
 }
 
 .mainTitle {
@@ -31,4 +42,16 @@
 .nav2
 {
     display: none;
+}
+
+.pageNames {
+    margin-left: 15px;
+}
+
+.active {
+    color: #00ead3;
+}
+
+#logoutModalContent {
+    background-color: #2b2a2a;
 }

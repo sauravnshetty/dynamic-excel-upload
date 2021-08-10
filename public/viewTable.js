@@ -9,7 +9,7 @@ fetch('/userdata/key', {
 .then( json => {
     keyColumn = json.data;
 })
-.catch(err => console.log("Error in /userdata/key api call"));
+.catch(err => window.location.reload());
 
 
 //------------------------------- HANDLING DELETE REQUEST FOR EACH ROW IN TABLE --------------------------
@@ -40,7 +40,7 @@ const handleDeleteClick = (event) => {
             window.location.reload();
         })
         .catch(err => {
-            console.error("Error /userdata/delete")
+            window.location.reload();
         });
     };
 }
@@ -131,8 +131,15 @@ const deleteColumnHtml = '<td class="text-end fixed-column" style="background-co
 
 const renderTable = (tableData, tableHead) => {
     
-    if(tableData === null)
+    if(tableData.length === 0){
+        document.getElementById("tableBody").innerHTML =  "<tr><h5 class='messageWhenEmpty'><i>No data to show. Data you've uploaded previously shows up here!</i></h5></tr>";
+        ["prevPage","nextPage","pageNumber"].forEach(ele => $(`#${ele}`).hide());
+    }
+
+    if(tableData === null){
+        
         return;
+    }
     
     tableData.forEach( (rowData, rowIndex) => {
         let tableRow = document.createElement("tr");
